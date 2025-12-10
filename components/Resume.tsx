@@ -44,7 +44,7 @@ const Resume: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-3xl">
             <a 
-              href="Monim_cv.pdf" 
+              href="/Monim_cv.pdf" 
               download="Monim_cv.pdf"
               className="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transform hover:-translate-y-1 w-full sm:w-auto"
             >
