@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
                 
                 <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 z-10">
                   <img 
-                    src="\monim.png" 
+                    src="/monim.png" 
                     alt="Mobasshir Monim" 
                     className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                   />
