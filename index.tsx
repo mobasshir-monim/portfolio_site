@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
+import AcademicPublications from './components/AcademicPublications';
 import Certificates from './components/Certificates';
 import Highlights from './components/Highlights';
 import AboutMe from './components/AboutMe';
@@ -19,6 +20,7 @@ const Home = () => (
     <Highlights />
     <Resume />
     <Projects />
+    <AcademicPublications />
     <Certificates />
     <AboutMe />
   </main>

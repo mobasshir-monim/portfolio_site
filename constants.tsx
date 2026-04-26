@@ -1,11 +1,12 @@
 import { Facebook, Linkedin, Youtube, Instagram, Mail } from "lucide-react";
-import { NavItem, SkillCategory, SocialLink, HighlightItem, ResumeItem, AchievementItem, ProjectItem, CertificateItem } from "./types";
+import { NavItem, SkillCategory, SocialLink, HighlightItem, ResumeItem, AchievementItem, ProjectItem, CertificateItem, AcademicPublication } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Youtube", href: "/youtube-feed" },
   { label: "Resume", href: "#resume" },
   { label: "Projects", href: "#projects" },
+  { label: "Publications", href: "#publications" },
   { label: "Certificates", href: "#certificates" },
   { label: "About Me", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -616,4 +617,62 @@ export const RESUME_SOFT_SKILLS: string[] = [
   "Management",
   "Networking",
   "Team work"
+];
+
+export const ACADEMIC_PUBLICATIONS: AcademicPublication[] = [
+  {
+    id: 1,
+    title: "Assistive Communication via AI-Driven Real-Time BdSL Gesture Generation on a Robotic Hand Platform",
+    authors: ["Md Naiem Mobasshir Monim", "Zul Ikram Musaddik Rayat", "Sakib Javed"],
+    venue: "IEEE International Conference on Telecommunications and Photonics 2025",
+    date: "2025",
+    type: "Conference",
+    abstract: "Bangladeshi Sign Language (BdSL) is the primary mode of communication for the deaf and hard-of-hearing community in Bangladesh. However, the lack of widespread proficiency in BdSL among the hearing population creates a significant communication gap, limiting accessibility to education, healthcare and public services. Real-time BdSL translation systems can bridge this gap, enabling seamless interaction between sign language users and non-signers. This paper presents a real-time BdSL translation framework that converts spoken Bangla into corresponding sign gestures using a 3D-printed robotic hand. The proposed system integrates the BanglaSpeech2Text model for speech-to-text transcription, MediaPipe-based hand landmark detection, and a Multilayer Perceptron (MLP) classifier for gesture classification. Recognized gestures are mapped to a calibrated servo configuration dataset, enabling precise control of six actuators (five fingers and a wrist) for accurate sign reproduction. Experimental evaluation on a preprocessed BdSL dataset achieved a test accuracy of 91.11\%, with balanced precision, recall, and F1-scores, and perfect recall for visually distinct gestures. The prototype demonstrated very low end-to-end latency, ensuring natural conversational flow. This AI-embedded assistive robotic platform demonstrates the potential for smart accessibility technologies and Industry 4.0-aligned inclusive automation.",
+    keywords: ["Bangladeshi Sign Language (BdSL)", "AI", "ML", "MediaPipe", "Multilayer Perceptron (MLP)", "Speech-to-Text", "Human–Robot Communication", "Assistive Robotics", "Real-Time Systems", "AI-embedded system", "Industry 4.0"],
+    doiUrl: "#"
+  },
+  {
+    id: 2,
+    title: "Inverse Navier-Stokes Field Reconstruction of High-Reynolds Urban Flows via Hard-Constraint Physics-Informed Neural Networks with Curriculum Learning",
+    authors: ["Md Naiem Mobasshir Monim", "Zul Ikram Musaddik Rayat", "Prof. M. Mamun"],
+    venue: "IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN) 2026",
+    date: "2026",
+    type: "Conference",
+    abstract: "Reconstructing physically consistent flow fields from sparse, indirect observations is a fundamental challenge in scientific machine learning. In urban environments, wind velocity measurements are scarce, whereas low-cost scalar pollutant sensors are increasingly ubiquitous. This paper presents a physics-informed deep learning framework that reconstructs full wind velocity fields using only sparse scalar concentration measurements, effectively converting pollution sensors into virtual velocity sensors. The framework introduces two key architectural innovations: (i) hard enforcement of boundary conditions via a distance-function ansatz, which embeds no-slip constraints directly into the network to eliminate boundary leakage; and (ii) a Reynolds number curriculum learning strategy (homotopy continuation) that mitigates spectral bias and stabilizes optimization in convection-dominated regimes. Without relying on explicit turbulence models, the approach captures dominant flow structures using a geometry-governed Effective Reynolds number formulation. Validation against the CODASC wind tunnel benchmark demonstrates accurate reconstruction of the primary vortex topology and leeward pollutant accumulation, confirming the method's robust generalization to real physical systems.",
+    keywords: ["Physics-Informed Neural Networks (PINNs)","Computational Fluid Dynamics","Optimization Techniques","Neural Network Architectures","Boundary Condition Enforcement","Inverse Problems","Urban Airflow Modeling","Sparse and Indirect Observations","Curriculum Learning","Hard Boundary Constraints","Representation Learning","Reynolds Number Homotopy","Spectral Bias Mitigation","Data-Driven Modeling","Scientific Machine Learning"],
+    doiUrl: "#"
+  },
+  {
+    id: 3,
+    title: "PM2.5 Timeseries Forecasting with Weather-Aware Attention Mechanism: A Multivariate Deep Learning Approach Based on Long-Term Data from Dhaka",
+    authors: ["Zul Ikram Musaddik Rayat","Md Naiem Mobasshir Monim", "Prof. M. Mamun"],
+    venue: "IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN) 2026",
+    date: "2026",
+    type: "Conference",
+    abstract: `Dhaka is among the world's most polluted megacities, with its Air Quality Index (AQI) frequently reaching Unhealthy to Hazardous levels, necessitating accurate air quality forecasting to mitigate public health risks. This study presents a multivariate time series analysis of PM2.5 in Dhaka using advanced deep learning architectures. The proposed framework integrates eight years (2017–2024) of meteorological variables—temperature, rainfall, humidity, and wind speed—alongside PM2.5 concentrations. We introduce a novel "Weather-Aware" Variable Attention mechanism coupled with LSTM and GRU recurrent layers to dynamically prioritize meteorological features. Experimental results demonstrate that the Variable Attention-based GRU model significantly outperforms standard benchmarks, achieving an $R^2$ of 0.9956 and a Mean Absolute Percentage Error (MAPE) of 3.65% for hourly forecasts. For daily predictions, the model remains robust with an $R^2$ of 0.9892 and a MAPE of 5.56%. Robustness analysis across five random seeds further validates the model's stability with a narrow 95% confidence interval. These findings highlight the critical importance of multivariate, weather-informed modeling for urban air quality prediction and provide actionable insights for policymakers to address pollution risks in South Asian megacities.`,
+    keywords: ["time series", "forecast", "air pollution", "AQI", "PM2.5", "machine learning", "attention mechanism", "LSTM", "GRU", "RNN"],
+    doiUrl: "#"
+  }
+  // {
+  //   id: 4,
+  //   title: "Real-Time 3D Face Generation in Blender Using MediaPipe: A Procedural Approach",
+  //   authors: ["Md Naiem Mobasshir Monim"],
+  //   venue: "Digital Arts and Animation Workshop",
+  //   date: "2024",
+  //   type: "Workshop",
+  //   abstract: "This paper documents a technical approach to real-time 3D facial landmark mapping in Blender using MediaPipe's Face Mesh model. The implementation achieves smooth facial landmark tracking with optimized rendering performance, enabling interactive applications in digital content creation and virtual communication.",
+  //   keywords: ["MediaPipe", "Blender", "3D Face Tracking", "Real-Time Rendering", "Computer Vision"],
+  //   pdfUrl: "#"
+  // },
+  // {
+  //   id: 5,
+  //   title: "Sustainable Packaging Solutions: Mycelium-Based Alternatives to Polystyrene",
+  //   authors: ["Md Naiem Mobasshir Monim", "Co-founders of MycoMatters"],
+  //   venue: "Bangladesh Youth Climate Sustainability and Innovation Summit",
+  //   date: "2025",
+  //   type: "Conference",
+  //   abstract: "MycoMatters presents a biotechnology-driven approach to developing sustainable packaging materials using mycelium composites as alternatives to conventional polystyrene. This research addresses environmental challenges in packaging waste through innovative material science and circular economy principles.",
+  //   keywords: ["Biotechnology", "Sustainability", "Mycelium", "Packaging", "Environmental Innovation"],
+  //   doiUrl: "#"
+  // }
 ];

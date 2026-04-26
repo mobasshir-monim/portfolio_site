@@ -56,3 +56,18 @@ export interface CertificateItem {
   image: string;
   credentialUrl?: string;
 }
+
+export type PublicationType = 'Conference' | 'Journal' | 'Workshop';
+
+export interface AcademicPublication {
+  id: number;
+  title: string;
+  authors: string[];
+  venue: string;
+  date: string;
+  type: PublicationType;
+  abstract: string;
+  keywords: string[];
+  doiUrl?: string;
+  pdfUrl?: string;
+}
