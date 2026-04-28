@@ -61,10 +61,10 @@ export const HIGHLIGHTS: HighlightItem[] = [
     description: "With CEO and Founder of ACS Numeri Sattar Apar"
   },
   {
-    id: 3,
-    image: "/treasurehunt.jpg",
-    title: "Winning Treasure Hunt of ME FEST 2023 and 2024",
-    description: "Celebrating teamwork and brainpower."
+    id: 12,
+    image: "/best_presenter.jpg",
+    title: "Best Presenter Award at IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN) 2026",
+    description: "Received the Best Presenter Award for the paper at QPAIN 2026."
   },
   {
     id: 4,
@@ -77,6 +77,12 @@ export const HIGHLIGHTS: HighlightItem[] = [
     image: "/intp.jpg",
     title: "Taking session on video production, editing and motion graphics",
     description: "At Team Interplanetar's Workshop \"Inside Interplanetar\""
+  },
+  {
+    id: 12,
+    image: "/treasurehunt.jpg",
+    title: "Winning Treasure Hunt of ME FEST 2023 and 2024",
+    description: "Celebrating teamwork and brainpower."
   },
   {
     id: 6,
@@ -113,7 +119,7 @@ export const HIGHLIGHTS: HighlightItem[] = [
     image: "/intern.jpg",
     title: "Internship at Synovia Pharmaceuticals PLC",
     description: "Gained hands-on experience in pharmaceutical manufacturing and quality control."
-  }
+  } 
 ];
 
 export const PROJECTS: ProjectItem[] = [
