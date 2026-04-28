@@ -6,7 +6,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Youtube", href: "/youtube-feed" },
   { label: "Resume", href: "#resume" },
   { label: "Projects", href: "#projects" },
-  { label: "Publications", href: "#publications" },
+  // { label: "Publications", href: "#publications" }, // TODO: Uncomment for future publishing scope
   { label: "Certificates", href: "#certificates" },
   { label: "About Me", href: "#about" },
   { label: "Contact", href: "#contact" },
