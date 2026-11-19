@@ -49,74 +49,92 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const HIGHLIGHTS: HighlightItem[] = [
   {
+    id: 13,
+    image: "/bizmaestros.webp",
+    title: "Bizmaestros x UFLP Grand Final: Top 3 in Supply Chain",
+    description: "Presenting at the Grand Final of Bizmaestros 2026 x Unilever Future Leaders Programme, finishing among the top 3 nationwide in the supply chain track."
+  },
+  {
+    id: 14,
+    image: "/cleantech_award.webp",
+    title: "National Cleantech Award Winner on circular entrepreneurship by UNIDO",
+    description: "2nd prize (BDT 3,50,000) at the National Cleantech Award Ceremony, Innovation Showcase on Circular Entrepreneurship, organised under UNIDO's sustainable plastics initiative."
+  },
+  {
+    id: 15,
+    image: "/thesis_defense.webp",
+    title: "Thesis Defense",
+    description: "Defending my undergraduate thesis at the Department of Mechanical Engineering, BUET."
+  },
+  {
     id: 1,
-    image: "/OCB.jpg",
+    image: "/OCB.webp",
     title: "Champion of Orange Corners Bangladesh Ideation Challenge 5.0",
     description: "Receiving recognition for being startup ideation challenge winner with MycoMatters."
   },
   {
     id: 2,
-    image: "/edctalk.jpg",
+    image: "/edctalk.webp",
     title: "EDC Talk Season 2",
     description: "With CEO and Founder of ACS Numeri Sattar Apar"
   },
   {
     id: 12,
-    image: "/best_presenter.jpg",
+    image: "/best_presenter.webp",
     title: "Best Presenter Award at IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN) 2026",
     description: "Received the Best Presenter Award for the paper at QPAIN 2026."
   },
   {
     id: 4,
-    image: "/cohort.jpg",
+    image: "/cohort.webp",
     title: "Champion of Cohort 5 of University Innovation Hub Program",
     description: "Won pre-seed funding and mentorship for MycoMatters from UIHP organised by Research and Innovation Centre for Science and Engineering (RISE-BUET) and Bangladesh Hi-Tech Park Authority and ICT Division."
   },
   {
     id: 5,
-    image: "/intp.jpg",
+    image: "/intp.webp",
     title: "Taking session on video production, editing and motion graphics",
     description: "At Team Interplanetar's Workshop \"Inside Interplanetar\""
   },
   {
-    id: 12,
-    image: "/treasurehunt.jpg",
+    id: 3,
+    image: "/treasurehunt.webp",
     title: "Winning Treasure Hunt of ME FEST 2023 and 2024",
     description: "Celebrating teamwork and brainpower."
   },
   {
     id: 6,
-    image: "/pvm.jpg",
+    image: "/pvm.webp",
     title: "Appreciation from Perfetti Van Melle Bangladesh",
     description: "For outstanding performance as Elevate Campus Ambassador"
   },
   {
     id: 7,
-    image: "/pres.jpg",
+    image: "/pres.webp",
     title: "Poster Presentation about Automation and Robotics in Industries.",
     description: "At BUET Mechanical Engineering Fest 2023"
   },
   {
     id: 8,
-    image: "/drama.jpg",
+    image: "/drama.webp",
     title: "Performing at Mecha Fest 2024",
     description: "Was the lead actor in a drama performance organized by BUET Mechanical Engineering Department"
   },
   {
     id: 9,
-    image: "/drama2.jpg",
+    image: "/drama2.webp",
     title: "Performing Drama on Mecha Fest 2023",
     description: "Acted as one of the main characters in a drama organized by BUET Mechanical Engineering Department"
   },
   {
     id: 10,
-    image: "/pres2.jpg",
+    image: "/pres2.webp",
     title: "Pitching on MycoMatters",
     description: "At Orange Corners Bangladesh Ideation Challenge 5.0 Final Round"
   },
   {
     id: 11,
-    image: "/intern.jpg",
+    image: "/intern.webp",
     title: "Internship at Synovia Pharmaceuticals PLC",
     description: "Gained hands-on experience in pharmaceutical manufacturing and quality control."
   } 
@@ -126,7 +144,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 1,
     title: "Visual-Vocal: A Voice Controller Robotic Hand for Real-Time Sign Language Communication",
-    image: "/photo_6275925132425936284_w.jpg",
+    image: "/visual-vocal.webp",
     bio: "Visual Vocal” is a project that explores the design and development of a robotic hand, capable of translating spoken language into real-time sign language gestures. It aims to perform sign language gestures based on speech input.",
     details: `Speech Recognition:
 – Utilizes Vosk machine learning model for speech-to-text conversion.
@@ -152,7 +170,7 @@ AI Integration:
   {
     id: 2,
     title: "Time-Series Analysis with RNNs and LSTMs for Thermal Performance Monitoring of a Shell and Helically Coiled Heat Exchanger",
-    image: "/IMG_20250402_211825_544~2.jpg",
+    image: "/heat-exchanger.webp",
     bio: "This project focuses on designing an improved shell and helically coiled heat exchanger (HX) and leveraging machine learning (ML) and deep learning (DL) techniques, particularly Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, to monitor and analyze its thermal performance over time.",
     details: `Objectives:
 – Design and optimize a shell and helically coiled heat exchanger to enhance thermal performance.
@@ -190,7 +208,7 @@ This project successfully integrated advanced machine learning techniques with h
   {
     id: 3,
     title: "PROCHESTA V1.0 | V2.0 | V3.0",
-    image: "/rover.jpg",
+    image: "/rover.webp",
     bio: "A new generation of rover with the most advanced navigation and communication system and most sophisticated till date science tool for collecting and testing soil designed, simulated and manufactured using advanced Physx Particle simulator.",
     tags: ["ROS", "Python", "Websockets", "Automation"],
     details: ``
@@ -198,7 +216,7 @@ This project successfully integrated advanced machine learning techniques with h
   {
     id: 4,
     title: "Real-Time 3D Face Generation in Blender Using MediaPipe",
-    image: "/project4.png",
+    image: "/project4.webp",
     bio: "This project focused on real-time face generation in Blender using MediaPipe, a powerful framework for facial landmark detection. By leveraging real-time facial tracking, the system allowed for dynamic and responsive 3D face modeling directly within Blender.",
     details: `Objectives:
 – Utilize MediaPipe to detect facial landmarks in real-time.
@@ -236,7 +254,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Orange Corners Bangladesh",
     date: "2025",
     category: "Awards",
-    image: "/OCB.jpg"
+    image: "/OCB.webp"
   },
   {
     id: 2,
@@ -244,7 +262,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "European Space Foundation",
     date: "2023",
     category: "Awards",
-    image: "/ERC.jpg"
+    image: "/ERC.webp"
   },
   {
     id: 3,
@@ -252,7 +270,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "DeepLearning.AI",
     date: "2024",
     category: "Machine Learning",
-    image: "/CNN.jpeg"
+    image: "/CNN.webp"
   },
   {
     id: 4,
@@ -260,7 +278,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Data Science",
-    image: "/tools-for-data-science.jpeg"
+    image: "/tools-for-data-science.webp"
   },
   {
     id: 5,
@@ -268,7 +286,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2023",
     category: "Matlab",
-    image: "/matlab1.jpg"
+    image: "/matlab1.webp"
   },
   {
     id: 6,
@@ -276,7 +294,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "The Mars Society",
     date: "2023",
     category: "Awards",
-    image: "/URC.jpg"
+    image: "/URC.webp"
   },
   {
     id: 7,
@@ -284,7 +302,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Space Robotics Society",
     date: "2023",
     category: "Awards",
-    image: "/irdc.jpg"
+    image: "/irdc.webp"
   },
   {
     id: 8,
@@ -292,7 +310,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Data Science",
-    image: "/data-science-methodology.jpeg"
+    image: "/data-science-methodology.webp"
   },
   {
     id: 9,
@@ -300,7 +318,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Stanford)",
     date: "2023",
     category: "Machine Learning",
-    image: "/Supervised_learning.jpeg"
+    image: "/Supervised_learning.webp"
   },
   {
     id: 10,
@@ -308,7 +326,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Stanford)",
     date: "2023",
     category: "Machine Learning",
-    image: "/intrototf.jpeg"
+    image: "/intrototf.webp"
   },
   {
     id: 11,
@@ -316,7 +334,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Machine Learning",
-    image: "/what-is-data-science.jpeg"
+    image: "/what-is-data-science.webp"
   },
   {
     id: 12,
@@ -324,7 +342,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Vanderbilt University)",
     date: "2023",
     category: "Matlab",
-    image: "/matlab.jpeg"
+    image: "/matlab.webp"
   },
   {
     id: 13,
@@ -332,7 +350,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (University of California, Davis)",
     date: "2023",
     category: "Data Science",
-    image: "/SQL.jpeg"
+    image: "/SQL.webp"
   },
   {
     id: 14,
@@ -340,7 +358,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2023",
     category: "Matlab",
-    image: "/signal.png"
+    image: "/signal.webp"
   },
   {
     id: 15,
@@ -348,7 +366,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HerWILL",
     date: "2024",
     category: "Machine Learning",
-    image: "/herwill.png"
+    image: "/herwill.webp"
   },
   {
     id: 16,
@@ -356,7 +374,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2024",
     category: "Matlab",
-    image: "/matlab3.jpg"
+    image: "/matlab3.webp"
   },
   {
     id: 17,
@@ -364,7 +382,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: ["Data Science", "Programming"],
-    image: "/Sqlbasic.jpg"
+    image: "/Sqlbasic.webp"
   },
   {
     id: 18,
@@ -372,7 +390,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: ["Data Science", "Programming"],
-    image: "/Sqlinter.jpg"
+    image: "/Sqlinter.webp"
   },
   {
     id: 19,
@@ -380,7 +398,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: "Programming",
-    image: "/JS.jpg"
+    image: "/JS.webp"
   },
   {
     id: 20,
@@ -388,7 +406,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Youth Messengers Bangladesh",
     date: "2025",
     category: ["Awards", "Entrepreneurship"],
-    image: "/mycoidea.jpg"
+    image: "/mycoidea.webp"
   },
   {
     id: 21,
@@ -396,7 +414,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "perfetti van melle",
     date: "2025",
     category: "Leadership",
-    image: "/elevate.jpg"
+    image: "/elevate.webp"
   },
 ];
 
@@ -434,31 +452,30 @@ export const HERO_TEXT = {
   greeting: "Hi!",
   headline: "An Engineer, A Youtuber & A Learner",
   bio: "I'm Md Naiem Mobasshir Monim, a mechanical engineer with an insatiable curiosity for the deep and intricate workings of the world. From exploring the complexities of robotics and machine learning to crafting compelling stories through video content and artistic expression, my journey has been anything but conventional.",
-  subBio: "Undergraduate Senior Year, Department of Mechanical Engineering"
+  subBio: "B.Sc. in Mechanical Engineering, BUET"
 };
 
 export const RESUME_EDUCATION: ResumeItem[] = [
   {
     title: "Bachelor of Science in Mechanical Engineering",
     organization: "Bangladesh University of Engineering and Technology (BUET)",
-    date: "Dec 2021 - Present",
+    date: "Jan 2022 – June 2026",
     points: [
-      "Industrial Attachment: Synovia Pharmaceuticals PLC",
-      "Thesis Project under Prof. M.Mamun"
+      "Industrial training at Synovia Pharmaceuticals PLC",
+      "Undergraduate thesis under Prof. Dr. Mohammad Mamun"
     ]
   },
   {
-    title: "Higher Secondary School Certificate",
-    organization: "Rajshahi College | Rajshahi Board",
-    date: "2019",
+    title: "Higher Secondary Certificate (HSC)",
+    organization: "Rajshahi College",
+    date: "2020",
     points: [
-      "GPA 5.00/5.00",
-      "Scholarship from Board of Education, Rajshahi"
+      "GPA 5.00 with Board Scholarship"
     ]
   },
   {
-    title: "Secondary School Certificate",
-    organization: "Rajshahi Collegiate School | Rajshahi Board",
+    title: "Secondary School Certificate (SSC)",
+    organization: "Rajshahi Collegiate School",
     date: "2018",
     points: [
       "GPA 5.00/5.00"
@@ -468,123 +485,97 @@ export const RESUME_EDUCATION: ResumeItem[] = [
 
 export const RESUME_LEADERSHIP: ResumeItem[] = [
   {
-    title: "Campus Spark",
-    organization: "Unilever",
-    date: "May 2025 – Present",
+    title: "President",
+    organization: "BUET Entrepreneurship Development Club",
+    date: "July 2025 – June 2026",
     points: [
-      "Represented Unilever on campus by leading brand engagement initiatives, increasing student participation in UFLP and business case competitions.",
-      "Boosted brand visibility through strategic event planning, digital outreach, and collaborations with university clubs.",
-      "Collected and delivered insights on student preferences and trends to support Unilever's campus recruitment and marketing strategies.",
-      "Contributed in affiliating BUET clubs with grameenphone's corporate culture"
+      "Spearheaded the university's largest “Entrepreneurs Summit”, hosting 50+ stalls for student startups and corporate entities.",
+      "Orchestrated 7 flagship events reaching a cumulative audience of 100,000+ across online and offline platforms.",
+      "Secured partnerships with 100+ sponsors and managed a total financial portfolio of over 50 Lakh BDT.",
+      "Rose through the ranks from Secretary to President, nurturing 7+ startups and directing creative branding strategies."
+    ]
+  },
+  {
+    title: "Campus Spark",
+    organization: "Unilever Bangladesh",
+    date: "July 2025 – June 2026",
+    points: [
+      "Led brand engagement on campus, increasing participation in UFLP and case competitions.",
+      "Coordinated club collaborations and reported student insights to support recruitment and marketing strategies."
+    ]
+  },
+  {
+    title: "General Secretary",
+    organization: "BUET Animata – Animation & VFX Club",
+    date: "Oct 2025 – June 2026",
+    points: [
+      "Served as Founding Assistant General Secretary; organized workshops on basic animation and 3D modeling.",
+      "Designed and animated the official club logo and visual assets."
+    ]
+  },
+  {
+    title: "Association Representative",
+    organization: "Mechanical Engineering Association, BUET",
+    date: "Aug 2025 – June 2026",
+    points: [
+      "Organized ME FEST 2026, ME FEST 2024, ME FEST 2023 and ME Reception 2023, catering to a total of 20,000+ participants."
+    ]
+  },
+  {
+    title: "Co-Leader | Animation Lead, Software Sub-team",
+    organization: "Team Interplanetar-A (BUET Mars Rover Team)",
+    date: "July 2024 – June 2025",
+    points: [
+      "Contributed to rover communication and perception systems for ERC 2023/2024, ARC 2023/2024 and URC 2023.",
+      "Animated and simulated rover performance for ERC 2023–2025 and IRDC 2023–2024."
     ]
   },
   {
     title: "Campus Lead",
     organization: "Grameenphone",
-    date: "Jan 2024 – March 2025",
+    date: "April 2024 – Mar 2025",
     points: [
-      "Organized and coordinated Grameenphone's Flagship events like Platform She roadshow, Next Business Leader Roadshow etc. at BUET",
-      "Contributed in affiliating BUET clubs with grameenphone's corporate culture"
+      "Organized flagship events (Platform SHE roadshow, Next Business Leader) at BUET, aligning club activities with corporate culture.",
+      "Facilitated exposure for 500+ students to Grameenphone's professional ecosystem and events."
     ]
   },
   {
     title: "Campus Ambassador",
-    organization: "Perfetti Van Melle BD",
-    date: "Jan 2024 – April 2025",
+    organization: "Perfetti Van Melle Bangladesh",
+    date: "April 2024 – Mar 2025",
     points: [
-      "Bridging the PVM marketing sector with BUET campus"
+      "Bridged PVM marketing initiatives with BUET campus activities to enhance brand visibility."
     ]
-  },
-  {
-    title: "President",
-    organization: "BUET Entrepreneurship Development Club",
-    date: "July 2023 – Present",
-    points: [
-      "Ex Positions: Assistant General Secretary, Secretary",
-      "Organized and hosted multiple events for the club both in administrative and cultural sector",
-      "Designed logos, banners, posters etc for the events",
-      "Created pitch deck for club's flagship event 'Pioneros'",
-      "Animated the club logo"
-    ]
-  },
-  {
-    title: "General Secretary",
-    organization: "BUET Animata-Animation and VFX club",
-    date: "March 2024 – Present",
-    points: [
-      "Ex Positions: Founding Assistant General Secretary",
-      "Organized and hosted multiple events for the club both in administrative and cultural sector",
-      "Held workshops on teaching basic animations and 3D modelling.",
-      "Animated the club logo"
-    ]
-  },
-  {
-    title: "Director of Technicals",
-    organization: "BUET Film Society",
-    date: "March 2024 – Present",
-    points: [
-      "Created content for the events like creating motion graphics, logo animation and video editing."
-    ]
-  },
-  {
-    title: "Volunteer",
-    organization: "Research and Innovation Centre for Science and Engineering (RISE-BUET)",
-    date: "March 2024 – Present",
-    points: [
-      "Designed brochures and posters for different campaigns."
-    ]
-  },
-  {
-    title: "Academic Team Member",
-    organization: "Bangladesh Mathematical Olympiad",
-    date: "March 2021 – Present",
-    points: [
-      "Created questions and evaluated answers for the Bangladesh Mathematical Olympiad.",
-      "Assisted in conducting Olympiad preparation bootcamps."
-    ]
-  },
-  {
-    title: "Assistant General Secretary",
-    organization: "BUET Brainiacs",
-    date: "Sep 2024 – Present",
-    points: [
-      "Actively involved in creating social media content and engaging in all club events."
-    ]
-  },
+  }
 ];
 
 export const RESUME_EXPERIENCE: ResumeItem[] = [
   {
-    title: "Internship",
+    title: "Industrial Trainee",
     organization: "Synovia Pharmaceuticals PLC",
-    date: "March 2025",
+    date: "March 2025 – April 2025",
     points: [
-      "Gained hands-on experience in pharmaceutical manufacturing and industrial processes.",
-      "Observed and analyzed quality control procedures in drug production.",
-      "Learned about Good Manufacturing Practices (GMP) and regulatory compliance in the pharmaceutical industry.",
-      "Explored the role of mechanical engineering in pharmaceutical equipment maintenance and optimization."
-    ]
-  },
-  {
-    title: "Animation Lead",
-    organization: "Software Sub-team, Team Interplanetar-A BUET Mars Rover Team",
-    date: "",
-    points: [
-      "Contributed in developing communication and perception system of the rover for European Rover Challenge 2023,2024; Anatolian Rover Challenge 2023,2024; University Rover Challenge 2023",
-      "Animated and Simulated rover performance for ERC 2023,2024,2025; IRDC 2023,2024",
-      "Performance Analysis of the Rover"
+      "Analyzed 8M+ kWh of energy consumption data; identified a 5.1% YoY increase and 46% cost rise, and recommended solar adoption and heat recovery systems.",
+      "Proposed IoT sensors for predictive maintenance on pharma machinery, estimating a 15–20% reduction in downtime via real-time monitoring.",
+      "Recommended AI-driven quality control for packaging and LIMS integration, projecting 30–40% better defect detection and improved traceability across 1000+ test batches/year.",
+      "Evaluated HVAC and cleanroom data (temperature, humidity, particle count) across 20+ zones; tuned parameters to maintain >98% GMP compliance and cut deviation incidents by 15%.",
+      "Studied procurement and inventory in Oracle ERP across 5000+ SKUs; flagged opportunities for data-driven forecasting and supply chain optimization.",
+      "Collaborated with 5+ cross-functional teams (engineering, QA, procurement, utilities, IT) on optimizations in water treatment, energy and production efficiency."
     ]
   }
 ];
 
 export const RESUME_ACHIEVEMENTS_LEADERSHIP: AchievementItem[] = [
-  { text: "Champions of Orange Corners BD Ideation Challenge 5.0 2025" },
-  { text: "Champion of cohort 5 of University Innovation Hub Program Organized by ICT Division, Bangladesh and RISE, BUET" },
-  { text: "Champion of Idea presentation sector in Bangladesh Youth Climate Sustainability and Innovation Summit" },
-  { text: "Semifinalist of HULT Prize BUET 2024." },
-  { text: "Selected for the second cohort of the University Hub Program 2024 at Research & innovation Center for Science & Engineering- RISE, BUET." },
-  { text: "Semifinalist of HULT Prize BUET 2024." },
-  { text: "Runners Up of Video Essay Challenge – BUET Brainiacs." },
+  { text: "Finalist of Bizmaestros x UFLP 2026 and Top 3 in Supply Chain" },
+  { text: "Winner of the Cleantech Innovation Award and grant, organized by UNIDO, the Government of the People's Republic of Bangladesh and the Embassy of Norway" },
+  { text: "Champion of Orange Corners BD Ideation Challenge 5.0 with Team MycoMatters" },
+  { text: "Champion of Cohort 5 of the University Innovation Hub Program (UIHP) at RISE, BUET, organized by Bangladesh Hi-Tech Park Authority and ICT Division" },
+  { text: "Secured a 70% scholarship at the ISCEA Prize Global Case Competition 2025" },
+  { text: "Finalist of HULT Prize BUET 2026" },
+  { text: "Champion of the Idea Presentation segment at Bangladesh Youth Climate Sustainability and Innovation Summit" },
+  { text: "Semifinalist of HULT Prize BUET 2024" },
+  { text: "Selected for the second cohort of the University Hub Program 2024 at RISE, BUET" },
+  { text: "Runners-up of the Video Essay Challenge – BUET Brainiacs" },
   { text: "Selected for the Sustain Launch Labs Cohort" }
 ];
 
@@ -597,21 +588,37 @@ export const RESUME_ACHIEVEMENTS_ROVER: AchievementItem[] = [
 ];
 
 export const RESUME_TECHNICAL_SKILLS: string[] = [
-  "SolidWorks CAD",
-  "Autocad",
-  "Ansys Simulation",
-  "Blender",
-  "Microsoft Office",
-  "Advanced Machine Learning",
-  "Adobe Illustrator",
-  "Matlab",
   "Python",
-  "Adobe Premiere Pro",
+  "MATLAB",
+  "SQL",
+  "C / C++",
+  "JavaScript",
+  "Kotlin",
+  "Pandas",
+  "NumPy",
+  "scikit-learn",
+  "TensorFlow",
+  "Keras",
+  "Matplotlib",
+  "Excel",
+  "Google Sheets",
+  "Jupyter",
+  "Google Colab",
+  "Git",
+  "Anaconda",
+  "SolidWorks",
+  "ANSYS",
+  "Simulink",
+  "AutoCAD",
+  "LaTeX",
+  "Bash / Linux",
   "Adobe After Effects",
-  "Canva",
-  "Full Stack Web Development",
-  "WordPress",
-  "Data Science"
+  "Adobe Premiere Pro",
+  "Blender",
+  "Audacity",
+  "Illustrator",
+  "Photoshop",
+  "Canva"
 ];
 
 export const RESUME_SOFT_SKILLS: string[] = [
@@ -619,10 +626,10 @@ export const RESUME_SOFT_SKILLS: string[] = [
   "Leadership",
   "Research",
   "Teaching",
-  "Critical thinking",
+  "Critical Thinking",
   "Management",
   "Networking",
-  "Team work"
+  "Teamwork"
 ];
 
 export const ACADEMIC_PUBLICATIONS: AcademicPublication[] = [
