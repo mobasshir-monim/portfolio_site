@@ -1,257 +1,229 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import {
-  AnimatePresence,
-  motion,
-  MotionValue,
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from 'motion/react';
+import { animate, AnimatePresence, motion, useAnimationFrame, useMotionValue, useReducedMotion, useTransform } from 'motion/react';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { HIGHLIGHTS } from '../constants';
 import { HighlightItem } from '../types';
 import { asset } from '../lib/asset';
-import { EASE } from './ui/Reveal';
+import { EASE, Reveal } from './ui/Reveal';
 import Modal from './ui/Modal';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
 // Gallery rhythm: height, aspect ratio and vertical alignment repeat every 4 cards
 const LAYOUT = [
-  'h-[62vh] aspect-[4/5] self-center',
-  'h-[46vh] aspect-[3/4] self-end',
-  'h-[52vh] aspect-square self-start',
-  'h-[48vh] aspect-[4/5] self-end',
+  'h-full aspect-[4/5] self-center',
+  'h-[78%] aspect-[3/4] self-end',
+  'h-[86%] aspect-square self-start',
+  'h-[80%] aspect-[4/5] self-end',
 ];
-
-const useIsDesktop = () => {
-  const query = '(min-width: 1024px)';
-  const [is, setIs] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches);
-  useEffect(() => {
-    const mq = window.matchMedia(query);
-    const on = () => setIs(mq.matches);
-    mq.addEventListener('change', on);
-    return () => mq.removeEventListener('change', on);
-  }, []);
-  return is;
-};
 
 /* ---------- Card ---------- */
 
-const Card: React.FC<{
-  item: HighlightItem;
-  index: number;
-  onOpen: () => void;
-  progress?: MotionValue<number>;
-  className?: string;
-}> = ({ item, index, onOpen, progress, className = '' }) => {
-  const zero = useMotionValue(0);
-  // Inner parallax: the photo drifts against the direction of travel
-  const imgX = useTransform(progress ?? zero, [0, 1], ['6%', '-6%']);
+const Card: React.FC<{ item: HighlightItem; index: number; onOpen: () => void; className?: string }> = ({ item, index, onOpen, className = '' }) => (
+  <button
+    onClick={onOpen}
+    className={`group relative shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-3 text-left ${className}`}
+    aria-label={`Open highlight: ${item.title}`}
+  >
+    <img
+      src={asset(item.image)}
+      alt={item.title}
+      loading="lazy"
+      draggable={false}
+      className="absolute inset-0 h-full w-full object-cover grayscale-[40%] transition-all duration-[1.2s] ease-out-expo group-hover:scale-105 group-hover:grayscale-0"
+    />
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/10" />
+    <span className="pointer-events-none absolute inset-3 rounded-[20px] border border-transparent transition-colors duration-700 group-hover:border-gold/50" />
 
-  return (
-    <motion.button
-      onClick={onOpen}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.05 }}
-      transition={{ duration: 1, ease: EASE, delay: (index % 4) * 0.05 }}
-      className={`group relative shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-ink-3 text-left ${className}`}
-      aria-label={`Open highlight: ${item.title}`}
-    >
-      <motion.img
-        src={asset(item.image)}
-        alt={item.title}
-        loading="lazy"
-        draggable={false}
-        style={progress ? { x: imgX, scale: 1.15 } : undefined}
-        className="absolute inset-0 h-full w-full object-cover grayscale-[40%] transition-[filter] duration-700 group-hover:grayscale-0"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/10" />
-      <span className="pointer-events-none absolute inset-3 rounded-[20px] border border-transparent transition-colors duration-700 group-hover:border-gold/50" />
+    <span className="absolute left-6 top-5 font-serif text-5xl italic leading-none text-ivory/90 drop-shadow md:text-6xl">{pad(index + 1)}</span>
+    <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-ink/40 text-ivory backdrop-blur transition-all duration-500 group-hover:rotate-45 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+      <ArrowUpRight size={16} />
+    </span>
 
-      <span className="absolute left-6 top-5 font-serif text-5xl italic leading-none text-ivory/90 drop-shadow md:text-6xl">{pad(index + 1)}</span>
-      <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-ink/40 text-ivory backdrop-blur transition-all duration-500 group-hover:rotate-45 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
-        <ArrowUpRight size={16} />
-      </span>
-
-      <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-        <h3 className="line-clamp-3 font-serif text-2xl leading-[1.1] text-ivory md:text-[1.75rem]">{item.title}</h3>
-        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-700 ease-out-expo group-hover:grid-rows-[1fr]">
-          <p className="overflow-hidden text-sm leading-relaxed text-ivory/70">
-            <span className="block pt-3">{item.description}</span>
-          </p>
-        </div>
+    <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+      <h3 className="line-clamp-3 font-serif text-2xl leading-[1.1] text-ivory md:text-[1.75rem]">{item.title}</h3>
+      <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-700 ease-out-expo group-hover:grid-rows-[1fr]">
+        <p className="overflow-hidden text-sm leading-relaxed text-ivory/70">
+          <span className="block pt-3">{item.description}</span>
+        </p>
       </div>
-    </motion.button>
-  );
-};
+    </div>
+  </button>
+);
 
 const Intro: React.FC = () => (
-  <>
+  <div>
     <p className="eyebrow mb-5 flex items-center gap-3">
       <span>01</span>
       <span className="h-px w-8 bg-gold/50" />
       <span>Moments</span>
     </p>
-    <h2 className="font-serif text-5xl leading-[0.92] tracking-tight md:text-6xl xl:text-7xl">
+    <h2 className="font-serif text-5xl leading-[0.95] tracking-tight md:text-7xl">
       Highlights &amp; <em className="text-gold-soft">milestones.</em>
     </h2>
-    <p className="mt-6 max-w-sm leading-relaxed text-mute">
+    <p className="mt-6 max-w-md leading-relaxed text-mute md:text-lg">
       Stages, awards and rooms I've been lucky to stand in — pitching, presenting, performing and building.
     </p>
-  </>
+  </div>
 );
 
-/* ---------- Desktop: vertical scroll drives a pinned horizontal gallery ---------- */
+/* ---------- Gallery: slow auto-drift, pauses on hover, draggable, never hijacks page scroll ---------- */
 
-const PinnedGallery: React.FC<{ onOpen: (i: number) => void }> = ({ onOpen }) => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [distance, setDistance] = useState(0);
-  const [active, setActive] = useState(0);
+const SPEED = 14; // px per second — deliberately slow
+const GAP = 24;
+
+const Gallery: React.FC<{ onOpen: (i: number) => void; paused: boolean }> = ({ onOpen, paused }) => {
+  const setRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const [setWidth, setSetWidth] = useState(0);
+  const [started, setStarted] = useState(false);
+  const hover = useRef(false);
+  const busy = useRef(false); // dragging or arrow animation
+  const resumeAt = useRef(0);
+  const drag = useRef({ down: false, startX: 0, startOffset: 0, moved: false });
+  const reduce = useReducedMotion();
 
   useLayoutEffect(() => {
-    const measure = () => {
-      const t = trackRef.current;
-      if (t) setDistance(Math.max(0, t.scrollWidth - window.innerWidth));
-    };
+    const measure = () => setRef.current && setSetWidth(setRef.current.offsetWidth);
     measure();
     const ro = new ResizeObserver(measure);
-    if (trackRef.current) ro.observe(trackRef.current);
-    window.addEventListener('resize', measure);
+    if (setRef.current) ro.observe(setRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  // Start drifting shortly after the page has loaded
+  useEffect(() => {
+    const go = () => setTimeout(() => setStarted(true), 1200);
+    if (document.readyState === 'complete') {
+      const t = go();
+      return () => clearTimeout(t);
+    }
+    let t: ReturnType<typeof setTimeout>;
+    const onLoad = () => (t = go());
+    window.addEventListener('load', onLoad);
     return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', measure);
+      window.removeEventListener('load', onLoad);
+      clearTimeout(t);
     };
   }, []);
 
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
-  const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
-  const x = useTransform(smooth, (p) => -p * distance);
-  const introX = useTransform(smooth, [0, 0.25], ['0%', '-25%']);
-  const introOpacity = useTransform(smooth, [0, 0.18], [1, 0.2]);
-  const backdropX = useTransform(smooth, [0, 1], ['8%', '-45%']);
-
-  useMotionValueEvent(scrollYProgress, 'change', (p) => {
-    setActive(Math.min(HIGHLIGHTS.length - 1, Math.max(0, Math.round(p * (HIGHLIGHTS.length - 1)))));
-  });
-
-  const jump = (dir: 1 | -1) => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const step = (el.offsetHeight - window.innerHeight) / (HIGHLIGHTS.length - 1);
-    window.scrollBy({ top: dir * step, behavior: 'smooth' });
+  const wrap = (v: number) => {
+    if (!setWidth) return v;
+    let r = v % setWidth;
+    if (r > 0) r -= setWidth;
+    return r;
   };
 
+  useAnimationFrame((_, delta) => {
+    if (!started || reduce || paused || hover.current || busy.current || performance.now() < resumeAt.current) return;
+    x.set(wrap(x.get() - (SPEED * delta) / 1000));
+  });
+
+  const nudge = (dir: 1 | -1) => {
+    busy.current = true;
+    const step = 380 + GAP;
+    animate(x, x.get() - dir * step, {
+      duration: 0.9,
+      ease: EASE,
+      onComplete: () => {
+        x.set(wrap(x.get()));
+        busy.current = false;
+        resumeAt.current = performance.now() + 2500;
+      },
+    });
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    drag.current = { down: true, startX: e.clientX, startOffset: x.get(), moved: false };
+    busy.current = true;
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    const d = drag.current;
+    if (!d.down) return;
+    const dx = e.clientX - d.startX;
+    if (Math.abs(dx) > 6) d.moved = true;
+    if (d.moved) x.set(wrap(d.startOffset + dx));
+  };
+  const endDrag = () => {
+    if (!drag.current.down) return;
+    drag.current.down = false;
+    busy.current = false;
+    resumeAt.current = performance.now() + 2500;
+  };
+
+  const progress = useTransform(x, (v) => (setWidth ? -v / setWidth : 0));
+  const backdropX = useTransform(x, (v) => v * 0.25);
+
+  const renderSet = (copy: number) =>
+    HIGHLIGHTS.map((item, i) => (
+      <Card
+        key={`${copy}-${item.id}`}
+        item={item}
+        index={i}
+        onOpen={() => !drag.current.moved && onOpen(i)}
+        className={LAYOUT[i % LAYOUT.length]}
+      />
+    ));
+
   return (
-    <section
-      id="highlights"
-      ref={sectionRef}
-      style={{ height: `calc(100vh + ${distance}px)` }}
-      className="relative border-t border-white/10 bg-ink-2"
-    >
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        <motion.p
-          aria-hidden
-          style={{ x: backdropX }}
-          className="pointer-events-none absolute bottom-[-5vh] left-0 select-none whitespace-nowrap font-serif text-[30vh] italic leading-none text-white/[0.03]"
-        >
-          Highlights &amp; milestones
-        </motion.p>
+    <section id="highlights" className="relative overflow-hidden border-t border-white/10 bg-ink-2 py-28 md:py-36">
+      <motion.p
+        aria-hidden
+        style={{ x: backdropX }}
+        className="pointer-events-none absolute bottom-0 left-0 select-none whitespace-nowrap font-serif text-[22vw] italic leading-none text-white/[0.03] md:text-[16vw]"
+      >
+        Highlights &amp; milestones · Highlights &amp; milestones
+      </motion.p>
 
-        <div className="relative flex flex-1 items-center pt-24">
-          <motion.div
-            ref={trackRef}
-            style={{ x, paddingLeft: 'max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem))' }}
-            className="flex h-[66vh] items-stretch gap-8 pr-[10vw]"
-          >
-            <motion.div style={{ x: introX, opacity: introOpacity }} className="flex w-[34vw] max-w-[500px] shrink-0 flex-col justify-center pr-6">
-              <Intro />
-              <p className="mt-10 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-mute">
-                Scroll to explore
-                <motion.span animate={{ x: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}>
-                  <ArrowRight size={14} className="text-gold" />
-                </motion.span>
-              </p>
-            </motion.div>
-
-            {HIGHLIGHTS.map((item, i) => (
-              <Card key={item.id} item={item} index={i} onOpen={() => onOpen(i)} progress={smooth} className={LAYOUT[i % LAYOUT.length]} />
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Rail: counter, progress, controls */}
-        <div className="relative mx-auto flex w-full max-w-7xl items-center gap-8 px-10 pb-8">
-          <div className="flex items-baseline gap-2 font-serif">
-            <span className="relative inline-block h-[1.15em] w-[1.25em] overflow-hidden text-4xl text-ivory">
-              <AnimatePresence initial={false}>
-                <motion.span
-                  key={active}
-                  initial={{ y: '100%' }}
-                  animate={{ y: '0%' }}
-                  exit={{ y: '-100%' }}
-                  transition={{ duration: 0.5, ease: EASE }}
-                  className="absolute inset-0"
-                >
-                  {pad(active + 1)}
-                </motion.span>
-              </AnimatePresence>
-            </span>
-            <span className="text-lg text-mute">/ {pad(HIGHLIGHTS.length)}</span>
-          </div>
-          <div className="relative h-px flex-1 bg-white/10">
-            <motion.div style={{ scaleX: smooth }} className="absolute inset-0 origin-left bg-gold" />
-          </div>
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-6 md:flex-row md:items-end md:justify-between md:px-10">
+        <Reveal>
+          <Intro />
+        </Reveal>
+        <Reveal delay={0.15}>
           <div className="flex gap-2">
             {([-1, 1] as const).map((d) => (
               <button
                 key={d}
-                onClick={() => jump(d)}
-                aria-label={d === -1 ? 'Previous highlight' : 'Next highlight'}
-                className="grid h-12 w-12 place-items-center rounded-full border border-white/15 transition-all duration-500 hover:border-gold hover:bg-gold hover:text-ink"
+                onClick={() => nudge(d)}
+                aria-label={d === -1 ? 'Previous highlights' : 'Next highlights'}
+                className="grid h-14 w-14 place-items-center rounded-full border border-white/15 transition-all duration-500 hover:border-gold hover:bg-gold hover:text-ink"
               >
-                {d === -1 ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+                {d === -1 ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
               </button>
             ))}
           </div>
+        </Reveal>
+      </div>
+
+      <Reveal delay={0.1}>
+        <div
+          className="relative mt-16 cursor-grab touch-pan-y select-none active:cursor-grabbing [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"
+          onMouseEnter={() => (hover.current = true)}
+          onMouseLeave={() => {
+            hover.current = false;
+            endDrag();
+          }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+        >
+          <motion.div style={{ x }} className="flex h-[440px] w-max items-stretch md:h-[560px]">
+            {[0, 1].map((copy) => (
+              <div key={copy} ref={copy === 0 ? setRef : undefined} className="flex h-full items-stretch" style={{ gap: GAP, paddingRight: GAP }} aria-hidden={copy === 1}>
+                {renderSet(copy)}
+              </div>
+            ))}
+          </motion.div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </Reveal>
 
-/* ---------- Mobile / tablet: swipeable snap carousel ---------- */
-
-const SwipeGallery: React.FC<{ onOpen: (i: number) => void }> = ({ onOpen }) => {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const { scrollXProgress } = useScroll({ container: trackRef });
-  const bar = useSpring(scrollXProgress, { stiffness: 140, damping: 30 });
-
-  return (
-    <section id="highlights" className="relative overflow-hidden border-t border-white/10 bg-ink-2 py-24">
-      <div className="px-6 md:px-10">
-        <Intro />
-      </div>
-      <div
-        ref={trackRef}
-        className="mt-12 flex snap-x snap-mandatory items-end gap-4 overflow-x-auto px-6 pb-4 [scroll-padding-inline:1.5rem] [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden"
-      >
-        {HIGHLIGHTS.map((item, i) => (
-          <Card
-            key={item.id}
-            item={item}
-            index={i}
-            onOpen={() => onOpen(i)}
-            className={`snap-start ${i % 2 === 0 ? 'h-[460px] w-[78vw] md:w-[380px]' : 'h-[400px] w-[66vw] md:w-[320px]'}`}
-          />
-        ))}
-      </div>
-      <div className="mx-6 mt-6 h-px bg-white/10 md:mx-10">
-        <motion.div style={{ scaleX: bar }} className="h-px origin-left bg-gold" />
+      <div className="relative mx-auto mt-10 flex max-w-7xl items-center gap-6 px-6 md:px-10">
+        <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-mute">{pad(HIGHLIGHTS.length)} moments</span>
+        <div className="relative h-px flex-1 bg-white/10">
+          <motion.div style={{ scaleX: progress }} className="absolute inset-0 origin-left bg-gold" />
+        </div>
+        <span className="hidden font-mono text-[11px] uppercase tracking-[0.25em] text-mute md:block">Hover to pause · drag to browse</span>
       </div>
     </section>
   );
@@ -260,7 +232,6 @@ const SwipeGallery: React.FC<{ onOpen: (i: number) => void }> = ({ onOpen }) => 
 /* ---------- Section ---------- */
 
 const Highlights: React.FC = () => {
-  const isDesktop = useIsDesktop();
   const [open, setOpen] = useState<number | null>(null);
 
   const step = useCallback((dir: 1 | -1) => setOpen((o) => (o === null ? o : (o + dir + HIGHLIGHTS.length) % HIGHLIGHTS.length)), []);
@@ -275,7 +246,7 @@ const Highlights: React.FC = () => {
 
   return (
     <>
-      {isDesktop ? <PinnedGallery onOpen={setOpen} /> : <SwipeGallery onOpen={setOpen} />}
+      <Gallery onOpen={setOpen} paused={open !== null} />
 
       <Modal open={open !== null} onClose={() => setOpen(null)} label="Highlight" wide onKey={onKey}>
         {current && (
