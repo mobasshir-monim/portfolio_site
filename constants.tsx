@@ -49,6 +49,24 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const HIGHLIGHTS: HighlightItem[] = [
   {
+    id: 13,
+    image: "/bizmaestros.webp",
+    title: "Bizmaestros x UFLP Grand Final: Top 3 in the country",
+    description: "Presenting at the Grand Final of Bizmaestros 2026 x Unilever Future Leaders Programme, finishing among the top 3 teams nationwide."
+  },
+  {
+    id: 14,
+    image: "/cleantech_award.webp",
+    title: "National Cleantech Award Winner on circular entrepreneurship by UNIDO",
+    description: "2nd prize (BDT 3,50,000) at the National Cleantech Award Ceremony, Innovation Showcase on Circular Entrepreneurship, organised under UNIDO's sustainable plastics initiative."
+  },
+  {
+    id: 15,
+    image: "/thesis_defense.webp",
+    title: "Thesis Defense",
+    description: "Defending my undergraduate thesis at the Department of Mechanical Engineering, BUET."
+  },
+  {
     id: 1,
     image: "/OCB.webp",
     title: "Champion of Orange Corners Bangladesh Ideation Challenge 5.0",
