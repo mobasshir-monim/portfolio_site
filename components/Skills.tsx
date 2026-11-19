@@ -7,7 +7,7 @@ const Skills: React.FC = () => (
   <section id="skills" className="relative py-28 md:py-40">
     <div className="mx-auto max-w-7xl px-6 md:px-10">
       <SectionHeading
-        index="01"
+        index="02"
         eyebrow="Toolkit"
         title="The craft behind"
         italic="the work."

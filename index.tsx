@@ -31,8 +31,8 @@ const Home = () => {
     <main>
       <Hero />
       <Marquee />
-      <Skills />
       <Highlights />
+      <Skills />
       <Resume />
       <Projects />
       {/* <AcademicPublications /> */}
