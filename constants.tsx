@@ -50,73 +50,73 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const HIGHLIGHTS: HighlightItem[] = [
   {
     id: 1,
-    image: "/OCB.jpg",
+    image: "/OCB.webp",
     title: "Champion of Orange Corners Bangladesh Ideation Challenge 5.0",
     description: "Receiving recognition for being startup ideation challenge winner with MycoMatters."
   },
   {
     id: 2,
-    image: "/edctalk.jpg",
+    image: "/edctalk.webp",
     title: "EDC Talk Season 2",
     description: "With CEO and Founder of ACS Numeri Sattar Apar"
   },
   {
     id: 12,
-    image: "/best_presenter.jpg",
+    image: "/best_presenter.webp",
     title: "Best Presenter Award at IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN) 2026",
     description: "Received the Best Presenter Award for the paper at QPAIN 2026."
   },
   {
     id: 4,
-    image: "/cohort.jpg",
+    image: "/cohort.webp",
     title: "Champion of Cohort 5 of University Innovation Hub Program",
     description: "Won pre-seed funding and mentorship for MycoMatters from UIHP organised by Research and Innovation Centre for Science and Engineering (RISE-BUET) and Bangladesh Hi-Tech Park Authority and ICT Division."
   },
   {
     id: 5,
-    image: "/intp.jpg",
+    image: "/intp.webp",
     title: "Taking session on video production, editing and motion graphics",
     description: "At Team Interplanetar's Workshop \"Inside Interplanetar\""
   },
   {
-    id: 12,
-    image: "/treasurehunt.jpg",
+    id: 3,
+    image: "/treasurehunt.webp",
     title: "Winning Treasure Hunt of ME FEST 2023 and 2024",
     description: "Celebrating teamwork and brainpower."
   },
   {
     id: 6,
-    image: "/pvm.jpg",
+    image: "/pvm.webp",
     title: "Appreciation from Perfetti Van Melle Bangladesh",
     description: "For outstanding performance as Elevate Campus Ambassador"
   },
   {
     id: 7,
-    image: "/pres.jpg",
+    image: "/pres.webp",
     title: "Poster Presentation about Automation and Robotics in Industries.",
     description: "At BUET Mechanical Engineering Fest 2023"
   },
   {
     id: 8,
-    image: "/drama.jpg",
+    image: "/drama.webp",
     title: "Performing at Mecha Fest 2024",
     description: "Was the lead actor in a drama performance organized by BUET Mechanical Engineering Department"
   },
   {
     id: 9,
-    image: "/drama2.jpg",
+    image: "/drama2.webp",
     title: "Performing Drama on Mecha Fest 2023",
     description: "Acted as one of the main characters in a drama organized by BUET Mechanical Engineering Department"
   },
   {
     id: 10,
-    image: "/pres2.jpg",
+    image: "/pres2.webp",
     title: "Pitching on MycoMatters",
     description: "At Orange Corners Bangladesh Ideation Challenge 5.0 Final Round"
   },
   {
     id: 11,
-    image: "/intern.jpg",
+    image: "/intern.webp",
     title: "Internship at Synovia Pharmaceuticals PLC",
     description: "Gained hands-on experience in pharmaceutical manufacturing and quality control."
   } 
@@ -126,7 +126,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 1,
     title: "Visual-Vocal: A Voice Controller Robotic Hand for Real-Time Sign Language Communication",
-    image: "/photo_6275925132425936284_w.jpg",
+    image: "/visual-vocal.webp",
     bio: "Visual Vocal” is a project that explores the design and development of a robotic hand, capable of translating spoken language into real-time sign language gestures. It aims to perform sign language gestures based on speech input.",
     details: `Speech Recognition:
 – Utilizes Vosk machine learning model for speech-to-text conversion.
@@ -152,7 +152,7 @@ AI Integration:
   {
     id: 2,
     title: "Time-Series Analysis with RNNs and LSTMs for Thermal Performance Monitoring of a Shell and Helically Coiled Heat Exchanger",
-    image: "/IMG_20250402_211825_544~2.jpg",
+    image: "/heat-exchanger.webp",
     bio: "This project focuses on designing an improved shell and helically coiled heat exchanger (HX) and leveraging machine learning (ML) and deep learning (DL) techniques, particularly Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, to monitor and analyze its thermal performance over time.",
     details: `Objectives:
 – Design and optimize a shell and helically coiled heat exchanger to enhance thermal performance.
@@ -190,7 +190,7 @@ This project successfully integrated advanced machine learning techniques with h
   {
     id: 3,
     title: "PROCHESTA V1.0 | V2.0 | V3.0",
-    image: "/rover.jpg",
+    image: "/rover.webp",
     bio: "A new generation of rover with the most advanced navigation and communication system and most sophisticated till date science tool for collecting and testing soil designed, simulated and manufactured using advanced Physx Particle simulator.",
     tags: ["ROS", "Python", "Websockets", "Automation"],
     details: ``
@@ -198,7 +198,7 @@ This project successfully integrated advanced machine learning techniques with h
   {
     id: 4,
     title: "Real-Time 3D Face Generation in Blender Using MediaPipe",
-    image: "/project4.png",
+    image: "/project4.webp",
     bio: "This project focused on real-time face generation in Blender using MediaPipe, a powerful framework for facial landmark detection. By leveraging real-time facial tracking, the system allowed for dynamic and responsive 3D face modeling directly within Blender.",
     details: `Objectives:
 – Utilize MediaPipe to detect facial landmarks in real-time.
@@ -236,7 +236,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Orange Corners Bangladesh",
     date: "2025",
     category: "Awards",
-    image: "/OCB.jpg"
+    image: "/OCB.webp"
   },
   {
     id: 2,
@@ -244,7 +244,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "European Space Foundation",
     date: "2023",
     category: "Awards",
-    image: "/ERC.jpg"
+    image: "/ERC.webp"
   },
   {
     id: 3,
@@ -252,7 +252,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "DeepLearning.AI",
     date: "2024",
     category: "Machine Learning",
-    image: "/CNN.jpeg"
+    image: "/CNN.webp"
   },
   {
     id: 4,
@@ -260,7 +260,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Data Science",
-    image: "/tools-for-data-science.jpeg"
+    image: "/tools-for-data-science.webp"
   },
   {
     id: 5,
@@ -268,7 +268,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2023",
     category: "Matlab",
-    image: "/matlab1.jpg"
+    image: "/matlab1.webp"
   },
   {
     id: 6,
@@ -276,7 +276,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "The Mars Society",
     date: "2023",
     category: "Awards",
-    image: "/URC.jpg"
+    image: "/URC.webp"
   },
   {
     id: 7,
@@ -284,7 +284,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Space Robotics Society",
     date: "2023",
     category: "Awards",
-    image: "/irdc.jpg"
+    image: "/irdc.webp"
   },
   {
     id: 8,
@@ -292,7 +292,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Data Science",
-    image: "/data-science-methodology.jpeg"
+    image: "/data-science-methodology.webp"
   },
   {
     id: 9,
@@ -300,7 +300,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Stanford)",
     date: "2023",
     category: "Machine Learning",
-    image: "/Supervised_learning.jpeg"
+    image: "/Supervised_learning.webp"
   },
   {
     id: 10,
@@ -308,7 +308,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Stanford)",
     date: "2023",
     category: "Machine Learning",
-    image: "/intrototf.jpeg"
+    image: "/intrototf.webp"
   },
   {
     id: 11,
@@ -316,7 +316,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM",
     date: "2023",
     category: "Machine Learning",
-    image: "/what-is-data-science.jpeg"
+    image: "/what-is-data-science.webp"
   },
   {
     id: 12,
@@ -324,7 +324,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (Vanderbilt University)",
     date: "2023",
     category: "Matlab",
-    image: "/matlab.jpeg"
+    image: "/matlab.webp"
   },
   {
     id: 13,
@@ -332,7 +332,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Coursera (University of California, Davis)",
     date: "2023",
     category: "Data Science",
-    image: "/SQL.jpeg"
+    image: "/SQL.webp"
   },
   {
     id: 14,
@@ -340,7 +340,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2023",
     category: "Matlab",
-    image: "/signal.png"
+    image: "/signal.webp"
   },
   {
     id: 15,
@@ -348,7 +348,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HerWILL",
     date: "2024",
     category: "Machine Learning",
-    image: "/herwill.png"
+    image: "/herwill.webp"
   },
   {
     id: 16,
@@ -356,7 +356,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "MathWorks",
     date: "2024",
     category: "Matlab",
-    image: "/matlab3.jpg"
+    image: "/matlab3.webp"
   },
   {
     id: 17,
@@ -364,7 +364,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: ["Data Science", "Programming"],
-    image: "/Sqlbasic.jpg"
+    image: "/Sqlbasic.webp"
   },
   {
     id: 18,
@@ -372,7 +372,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: ["Data Science", "Programming"],
-    image: "/Sqlinter.jpg"
+    image: "/Sqlinter.webp"
   },
   {
     id: 19,
@@ -380,7 +380,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "HackerRank",
     date: "2023",
     category: "Programming",
-    image: "/JS.jpg"
+    image: "/JS.webp"
   },
   {
     id: 20,
@@ -388,7 +388,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "Youth Messengers Bangladesh",
     date: "2025",
     category: ["Awards", "Entrepreneurship"],
-    image: "/mycoidea.jpg"
+    image: "/mycoidea.webp"
   },
   {
     id: 21,
@@ -396,7 +396,7 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "perfetti van melle",
     date: "2025",
     category: "Leadership",
-    image: "/elevate.jpg"
+    image: "/elevate.webp"
   },
 ];
 
@@ -434,7 +434,7 @@ export const HERO_TEXT = {
   greeting: "Hi!",
   headline: "An Engineer, A Youtuber & A Learner",
   bio: "I'm Md Naiem Mobasshir Monim, a mechanical engineer with an insatiable curiosity for the deep and intricate workings of the world. From exploring the complexities of robotics and machine learning to crafting compelling stories through video content and artistic expression, my journey has been anything but conventional.",
-  subBio: "Undergraduate Senior Year, Department of Mechanical Engineering"
+  subBio: "B.Sc. in Mechanical Engineering, BUET"
 };
 
 export const RESUME_EDUCATION: ResumeItem[] = [
@@ -583,7 +583,6 @@ export const RESUME_ACHIEVEMENTS_LEADERSHIP: AchievementItem[] = [
   { text: "Champion of Idea presentation sector in Bangladesh Youth Climate Sustainability and Innovation Summit" },
   { text: "Semifinalist of HULT Prize BUET 2024." },
   { text: "Selected for the second cohort of the University Hub Program 2024 at Research & innovation Center for Science & Engineering- RISE, BUET." },
-  { text: "Semifinalist of HULT Prize BUET 2024." },
   { text: "Runners Up of Video Essay Challenge – BUET Brainiacs." },
   { text: "Selected for the Sustain Launch Labs Cohort" }
 ];
