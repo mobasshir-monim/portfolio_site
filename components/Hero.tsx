@@ -189,7 +189,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease: EASE, delay: 0.2 }}
-          className="relative mx-auto w-full max-w-[440px] [perspective:1200px]"
+          className="relative mx-auto mt-8 w-full max-w-[440px] [perspective:1200px] lg:mt-24"
         >
           <motion.div style={{ rotateX: rx, rotateY: ry }} className="relative">
             <div className="absolute -inset-6 rounded-t-full border border-white/[0.06]" />
