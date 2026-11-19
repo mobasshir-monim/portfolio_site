@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
 
   // Parallax on scroll
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '-8%']);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-12%']);
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
@@ -195,10 +195,10 @@ const Hero: React.FC = () => {
             <div className="absolute -inset-6 rounded-t-full border border-white/[0.06]" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-t-full rounded-b-3xl border border-white/10 bg-ink-3">
               <motion.img
-                style={{ y: imgY, scale: 1.12 }}
+                style={{ y: imgY, scale: 1.12, transformOrigin: '50% 0%' }}
                 src={asset('/monim.webp')}
                 alt="Portrait of Mobasshir Monim"
-                className="h-full w-full object-cover object-[60%_20%] saturate-[0.85] transition-[filter] duration-700 hover:saturate-100"
+                className="h-full w-full object-cover object-[60%_0%] saturate-[0.85] transition-[filter] duration-700 hover:saturate-100"
                 fetchPriority="high"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
