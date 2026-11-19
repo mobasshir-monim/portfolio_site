@@ -472,6 +472,14 @@ export const RESUME_EDUCATION: ResumeItem[] = [
     points: [
       "GPA 5.00 with Board Scholarship"
     ]
+  },
+  {
+    title: "Secondary School Certificate (SSC)",
+    organization: "Rajshahi Collegiate School",
+    date: "2018",
+    points: [
+      "GPA 5.00/5.00"
+    ]
   }
 ];
 
@@ -563,7 +571,12 @@ export const RESUME_ACHIEVEMENTS_LEADERSHIP: AchievementItem[] = [
   { text: "Champion of Orange Corners BD Ideation Challenge 5.0 with Team MycoMatters" },
   { text: "Champion of Cohort 5 of the University Innovation Hub Program (UIHP) at RISE, BUET, organized by Bangladesh Hi-Tech Park Authority and ICT Division" },
   { text: "Secured a 70% scholarship at the ISCEA Prize Global Case Competition 2025" },
-  { text: "Finalist of HULT Prize BUET 2026" }
+  { text: "Finalist of HULT Prize BUET 2026" },
+  { text: "Champion of the Idea Presentation segment at Bangladesh Youth Climate Sustainability and Innovation Summit" },
+  { text: "Semifinalist of HULT Prize BUET 2024" },
+  { text: "Selected for the second cohort of the University Hub Program 2024 at RISE, BUET" },
+  { text: "Runners-up of the Video Essay Challenge – BUET Brainiacs" },
+  { text: "Selected for the Sustain Launch Labs Cohort" }
 ];
 
 export const RESUME_ACHIEVEMENTS_ROVER: AchievementItem[] = [
