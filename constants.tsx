@@ -51,7 +51,7 @@ export const HIGHLIGHTS: HighlightItem[] = [
   {
     id: 13,
     image: "/bizmaestros.webp",
-    title: "Bizmaestros x UFLP Grand Final: Top 3 in the country",
+    title: "Bizmaestros x UFLP Grand Final: Top 3 in Supply Chain",
     description: "Presenting at the Grand Final of Bizmaestros 2026 x Unilever Future Leaders Programme, finishing among the top 3 nationwide in the supply chain track."
   },
   {
